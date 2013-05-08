@@ -12,6 +12,11 @@ ZSH_THEME="dieter"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 alias qzz='noglob qzz'
 
+#replace icns
+alias reit='cp /Applications/TotalTerminal.app/Contents/Resources/applet.icns /Applications/iTerm.app/Contents/Resources/iTerm.icns'
+alias rest='cp "/Users/soncy/Documents/icons/Sublime Text.icns" "/Applications/Sublime Text 2.app/Contents/Resources/Sublime Text 2.icns"'
+alias rest3='cp "/Users/soncy/Documents/icons/Sublime Text.icns" "/Applications/Sublime Text.app/Contents/Resources/Sublime Text.icns"'
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -41,7 +46,7 @@ alias qzz='noglob qzz'
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git svn git osx ruby ssh)
+plugins=(git svn osx ruby ssh)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -58,6 +63,8 @@ fi
 
 # Customize to your needs...
 export PATH=$PATH:/Users/soncy/.rvm/gems/ruby-1.9.2-p320/bin:/Users/soncy/.rvm/gems/ruby-1.9.2-p320@global/bin:/Users/soncy/.rvm/rubies/ruby-1.9.2-p320/bin:/Users/soncy/.rvm/bin:/usr/local/opt/coreutils/libexec/gnubin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin
+# To use Sublime Text 2 as the editor for many commands that prompt for input
+export EDITOR='subl -w'
 
 # SSH的时候补全只读取known_hosts
 zstyle -e ':completion::*:*:*:hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
